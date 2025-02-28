@@ -9,7 +9,13 @@ public class Util {
     private static final String USER = "root";
     private static final String PASSWORD = "TypeGirl";
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return connection;
     }
 }

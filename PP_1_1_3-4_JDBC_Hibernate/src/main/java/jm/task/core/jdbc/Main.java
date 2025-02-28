@@ -8,8 +8,9 @@ import java.sql.Driver;
 public class Main {
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
-        // Создание таблицы
+
         userService.createUsersTable();
+
         userService.saveUser("Alice", "Smith", (byte) 25);
         userService.saveUser("Bob", "Johnson", (byte) 30);
         userService.saveUser("Charlie", "Brown", (byte) 35);
@@ -18,7 +19,7 @@ public class Main {
         System.out.println(userService.getAllUsers());
 
         userService.cleanUsersTable();
-        // Удаление таблицы
+
         userService.dropUsersTable();
     }
 }
